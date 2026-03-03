@@ -49,45 +49,7 @@ Possible dataset sources:
 
 Random seed is fixed for reproducibility.
 
----
 
-## 🔄 NLP Pipeline
-
-### 1️⃣ Text Preprocessing
-
-- Lowercasing
-- Remove special characters
-- Stopword removal
-- Tokenization
-- (Optional) Stemming / Lemmatization
-- (Optional) Vietnamese word segmentation
-
----
-
-### 2️⃣ Feature Engineering
-
-- Bag of Words (CountVectorizer)
-- TF-IDF
-- Word2Vec
-- FastText
-- BERT Embeddings (Optional Advanced)
-
----
-
-### 3️⃣ Models
-
-#### ✅ Traditional Machine Learning
-- Naive Bayes
-- Logistic Regression
-- SVM
-- Random Forest
-
-#### 🚀 Deep Learning
-- LSTM
-- CNN for Text
-- PhoBERT / BERT
-
----
 
 ## 📈 Evaluation Metrics
 
