@@ -1,160 +1,159 @@
-# 📘 NLP Text & News Classification Project
+# AGENTS.md – NLP Text & News Classification
 
-## 1️⃣ Project Overview
+## Project Overview
 
-**Course:** Xử lý Ngôn ngữ Tự nhiên (Natural Language Processing – NLP)  
+Course: Natural Language Processing (NLP)  
+Topic: Text & News Classification  
 
-**Topic:** Phân loại văn bản và tin tức (Text & News Classification)
+Goal: Build an automated text classification system using Machine Learning and/or Deep Learning.
 
-**Goal:**  
-Xây dựng hệ thống phân loại văn bản tự động dựa trên các thuật toán Machine Learning và/hoặc Deep Learning.
+Target labels:
 
-### Example Categories
-
-- Chính trị  
-- Kinh tế  
-- Thể thao  
-- Giải trí  
-- Công nghệ  
-
-### Dataset Options
-
-- Vietnamese news dataset (VNExpress, Zing, etc.)
-- Kaggle news classification datasets
-- Custom collected dataset (phải ghi rõ nguồn)
+- Chính trị
+- Kinh tế
+- Thể thao
+- Giải trí
+- Công nghệ
 
 ---
 
-## 2️⃣ Project Structure Guidelines
+## Repository Structure
 
-### Recommended Structure
-
-```bash
+```
 nlp-text-classification/
 │
 ├── data/
-│   ├── raw/                  # Dữ liệu gốc
-│   ├── processed/            # Dữ liệu sau tiền xử lý
+│   ├── raw/
+│   └── processed/
 │
-├── notebooks/                # Jupyter Notebook thử nghiệm
+├── notebooks/
 │
 ├── src/
-│   ├── preprocessing.py      # Tiền xử lý văn bản
+│   ├── preprocessing.py
 │   ├── feature_engineering.py
-│   ├── model.py              # Định nghĩa model
-│   ├── train.py              # Huấn luyện
-│   ├── evaluate.py           # Đánh giá
+│   ├── model.py
+│   ├── train.py
+│   ├── evaluate.py
 │   └── utils.py
 │
-├── models/                   # Lưu model đã train
-│
-├── reports/                  # Báo cáo, biểu đồ
-│
+├── models/
+├── reports/
 ├── requirements.txt
 └── README.md
 ```
 
+Do not modify structure unless necessary.  
+All scripts must run using relative paths.
+
 ---
 
-## 3️⃣ Dev Environment Tips
+## Dev Environment
 
-### Create Virtual Environment
+Create virtual environment:
 
-```bash
+```
 python -m venv venv
 ```
 
-### Activate Environment
+Activate:
 
-- Windows:
-```bash
+Windows:
+```
 venv\Scripts\activate
 ```
 
-- Mac/Linux:
-```bash
+Mac/Linux:
+```
 source venv/bin/activate
 ```
 
-### Install Dependencies
+Install dependencies:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
-### Common Libraries
+Core libraries:
 
-- numpy  
-- pandas  
-- scikit-learn  
-- matplotlib / seaborn  
-- underthesea (Vietnamese NLP)  
-- pyvi  
-- torch hoặc tensorflow (Deep Learning)
+- numpy
+- pandas
+- scikit-learn
+- matplotlib
+- seaborn
+- underthesea / pyvi
+- torch or tensorflow (if deep learning)
 
-### If Using Jupyter
+If using Jupyter:
 
-```bash
+```
 pip install notebook
 jupyter notebook
 ```
 
 ---
 
-## 4️⃣ Data Preprocessing Instructions
+## Data Preprocessing Rules
 
-### Must Implement
+Must implement:
 
 - Lowercasing
 - Remove special characters
 - Remove stopwords
 - Tokenization
 
-### Optional
+Optional:
 
 - Lemmatization
 - Stemming
-- Word segmentation (for Vietnamese)
+- Vietnamese word segmentation
 
-### Vectorization Methods
+Vectorization options:
 
-- Bag of Words (CountVectorizer)
+- CountVectorizer
 - TF-IDF
 - Word2Vec
 - FastText
-- BERT embeddings (optional advanced)
+- BERT embeddings
 
-⚠ All preprocessing steps must be reproducible and documented clearly.
+All preprocessing must be:
+
+- Reproducible
+- Versioned
+- Fully documented
 
 ---
 
-## 5️⃣ Model Development Instructions
+## Model Development
 
-### Baseline Models
+Baseline models:
 
 - Naive Bayes
 - Logistic Regression
 - SVM
 - Random Forest
 
-### Advanced Models
+Advanced models:
 
 - LSTM
 - CNN for text
 - PhoBERT / BERT
 
-### Training Rules
+Training requirements:
 
-- Split dataset: train / validation / test
+- Train / validation / test split
 - Use cross-validation when possible
-- Save trained model to `/models`
-- Log metrics clearly
+- Fix random seed
+- Save models to `/models`
+- Log training time
+- Log hyperparameters
+
+Never overwrite best model without backup.
 
 ---
 
-## 6️⃣ Evaluation Instructions
+## Evaluation Requirements
 
-### Must Report
+Must report:
 
 - Accuracy
 - Precision
@@ -162,105 +161,100 @@ jupyter notebook
 - F1-score
 - Confusion Matrix
 
-### Use
+Use:
 
-```python
+```
 sklearn.metrics.classification_report
 sklearn.metrics.confusion_matrix
 ```
 
-### Include Visualization
+Include:
 
-- Confusion matrix
+- Confusion matrix visualization
 - Loss curve (if deep learning)
 
-### Compare At Least
+Must compare:
 
-- 1 traditional ML model
-- 1 deep learning model (if applicable)
+- At least 1 traditional ML model
+- At least 1 deep learning model (if applicable)
 
 ---
 
-## 7️⃣ Experiment Tracking Rules
+## Experiment Tracking
 
-Always document:
+For every experiment, record:
 
 - Dataset version
 - Preprocessing version
 - Model parameters
 - Training time
+- Metrics
 
-📌 Keep a results table in `reports/`
+Maintain a results table in `/reports`.
 
-⚠ Do not overwrite best model without backup.
-
-⚠ Use consistent random seed for reproducibility.
+Do not delete historical experiment results.
 
 ---
 
-## 8️⃣ Coding Rules
+## Coding Standards
 
 - Follow PEP8
-- Write modular code (no giant notebooks-only project)
-- Functions must have docstrings
+- Modular design (no notebook-only implementation)
+- Use docstrings
 - Avoid hard-coded paths
-- Use relative paths
+- Use relative imports
+- Separate preprocessing, training, evaluation logic
 
 ---
 
-## 9️⃣ Testing Instructions
+## Testing Rules
 
-- Ensure preprocessing runs without errors on full dataset
-- Ensure training script runs end-to-end
+Before submission:
 
-After modifying model or preprocessing:
+- Preprocessing must run on full dataset without error
+- Training script must run end-to-end
+- Model loading must work correctly
+- Metrics must be reproducible
 
-- Re-run training
-- Re-check metrics
-- Verify model loading works correctly
+If modifying:
 
-If adding new feature:
-
-- Compare performance before & after
-- Document improvement
+- Re-train model
+- Re-evaluate metrics
+- Document performance difference
 
 ---
 
-## 🔟 Report Requirements
+## Report Requirements
 
-The final report must include:
+Final report must include:
 
 - Introduction
-- Literature review (brief)
+- Literature review
 - Dataset description
 - Methodology
 - Experiments
 - Results comparison
 - Discussion
-- Conclusion & Future work
+- Conclusion
+- Future work
 
-Include:
-
-- Tables
-- Graphs
-- Model comparison
-- Error analysis
+Include tables, graphs, comparison charts, and error analysis.
 
 ---
 
-## 1️⃣1️⃣ PR / Submission Instructions
+## Submission Checklist
 
-Final folder must include:
+Final submission must include:
 
 - Source code
 - Trained model
 - requirements.txt
-- Report (PDF)
+- Final PDF report
 
-Before submission:
+Before submitting:
 
-- Run full training pipeline
+- Run full pipeline
 - Remove unused files
 - Ensure reproducibility
 
-✅ Another person must be able to clone repo and run successfully.
+Another person must be able to clone the repository and run successfully without modification.
