@@ -30,32 +30,6 @@ The system classifies news articles into predefined categories such as:
   - Deep Learning models
 - Ensure reproducibility and modular code structure
 
----
-
-## 📂 Project Structure
-
-```bash
-nlp-text-classification/
-│
-├── data/
-│   ├── raw/                  # Original dataset
-│   └── processed/            # Cleaned & preprocessed data
-│
-├── notebooks/                # Experiment notebooks
-│
-├── src/
-│   ├── preprocessing.py
-│   ├── feature_engineering.py
-│   ├── model.py
-│   ├── train.py
-│   ├── evaluate.py
-│   └── utils.py
-│
-├── models/                   # Saved trained models
-├── reports/                  # Experiment reports & figures
-├── requirements.txt
-└── README.md
-```
 
 ---
 
@@ -158,7 +132,7 @@ Results are summarized in `/reports`.
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/nlp-text-classification.git
+git clone https://github.com/haidang0106/nlp-text-classification.git
 cd nlp-text-classification
 ```
 
