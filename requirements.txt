@@ -9,3 +9,9 @@ jupyter
 notebook
 # torch
 # tensorflow
+fastapi
+uvicorn
+beautifulsoup4
+requests
+pytest
+httpx

@@ -144,7 +144,48 @@ python src/train.py
 python src/evaluate.py
 ```
 
+### 🌐 API Server (Phân loại từ URL)
+
+Khởi động server API:
+
+```bash
+python -m uvicorn src.api:app --reload
+```
+
+Server chạy tại `http://127.0.0.1:8000`. Truy cập `http://127.0.0.1:8000/docs` để xem Swagger UI.
+
+#### Gửi URL để dự đoán
+
+```bash
+curl -X POST http://127.0.0.1:8000/predict -H "Content-Type: application/json" -d "{\"url\": \"https://vnexpress.net/bai-viet.html\"}"
+```
+
+Response mẫu:
+
+```json
+{
+  "url": "https://vnexpress.net/bai-viet.html",
+  "title": "Tiêu đề bài báo",
+  "label": "Thể thao",
+  "confidence": 97.64,
+  "cleaned_text_preview": "nội dung đã tiền xử lý..."
+}
+```
+
+#### Health Check
+
+```bash
+curl http://127.0.0.1:8000/health
+```
+
+### 🧪 Chạy Tests
+
+```bash
+python -m pytest tests/ -v
+```
+
 ---
+
 
 ## 📊 Results Summary
 
